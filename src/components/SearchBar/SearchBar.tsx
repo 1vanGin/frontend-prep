@@ -1,9 +1,7 @@
 import React from 'react';
 import {TextField} from '@mui/material';
 
-interface SearchBarProps {
-  onSearch: (searchTerm: string) => void;
-}
+import {SearchBarProps} from './types';
 
 function SearchBar({onSearch}: SearchBarProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

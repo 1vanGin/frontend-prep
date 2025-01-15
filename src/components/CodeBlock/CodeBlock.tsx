@@ -3,13 +3,9 @@ import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {materialDark} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {Paper, Typography, Box} from '@mui/material';
 
-interface CodeBlockProps {
-  code: string;
-  language: string;
-  title?: string;
-}
+import {CodeBlockProps} from './types';
 
-const CodeBlock = ({code, language, title}: CodeBlockProps): JSX.Element => {
+export const CodeBlock = ({code, language, title}: CodeBlockProps) => {
   return (
     <Paper elevation={3} sx={{borderRadius: 2, overflow: 'hidden'}}>
       {title && (
@@ -27,5 +23,3 @@ const CodeBlock = ({code, language, title}: CodeBlockProps): JSX.Element => {
     </Paper>
   );
 };
-
-export default CodeBlock;

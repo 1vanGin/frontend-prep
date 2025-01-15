@@ -2,17 +2,7 @@ import React from 'react';
 import {Link as RouterLink} from 'react-router-dom';
 import {Card, CardContent, CardActions, Typography, Button, List, ListItem, ListItemText} from '@mui/material';
 
-interface TopicLink {
-  title: string;
-  link: string;
-}
-
-interface SectionCardProps {
-  title: string;
-  topics?: TopicLink[];
-  link: string;
-  description?: string;
-}
+import {SectionCardProps} from './types';
 
 function SectionCard({title, topics, link, description}: SectionCardProps) {
   return (

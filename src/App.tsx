@@ -1,22 +1,26 @@
+import {lazy} from 'react';
 import {Routes, Route} from 'react-router-dom';
+
 import Layout from './components/Layout/Layout';
-import Home from './pages/Home/Home';
-import JavaScriptPage from './pages/JavaScriptPage/JavaScriptPage';
-import ReactPage from './pages/ReactPage/ReactPage';
-import TypeScriptPage from './pages/TypeScriptPage/TypeScriptPage';
-import InterviewQuestions from './pages/InterviewQuestions/InterviewQuestions';
-import CodingTasks from './pages/CodingTasks/CodingTasks';
+import {URL_PATH} from './pages/enum';
+
+const HomeModule = lazy(() => import('./pages/Home'));
+const JavaScriptModule = lazy(() => import('./pages/JavaScriptPage'));
+const ReactModule = lazy(() => import('./pages/ReactPage'));
+const TypeScriptModule = lazy(() => import('./pages/TypeScriptPage'));
+const InterviewQuestionsModule = lazy(() => import('./pages/InterviewQuestions'));
+const CodingTasksModule = lazy(() => import('./pages/CodingTasks'));
 
 function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/javascript" element={<JavaScriptPage />} />
-        <Route path="/react" element={<ReactPage />} />
-        <Route path="/typescript" element={<TypeScriptPage />} />
-        <Route path="/interview-questions" element={<InterviewQuestions />} />
-        <Route path="/coding-tasks" element={<CodingTasks />} />
+        <Route path="/" element={<HomeModule />} />
+        <Route path={URL_PATH.JavaScript} element={<JavaScriptModule />} />
+        <Route path={URL_PATH.React} element={<ReactModule />} />
+        <Route path={URL_PATH.TypeScript} element={<TypeScriptModule />} />
+        <Route path={URL_PATH.Interview_Questions} element={<InterviewQuestionsModule />} />
+        <Route path={URL_PATH.Coding_Tasks} element={<CodingTasksModule />} />
       </Routes>
     </Layout>
   );

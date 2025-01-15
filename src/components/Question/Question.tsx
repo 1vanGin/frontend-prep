@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
 import {Accordion, AccordionSummary, AccordionDetails, Typography} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import CodeBlock from '../CodeBlock/CodeBlock';
 
-interface QuestionProps {
-  question: string;
-  answer: string;
-}
+import {QuestionProps} from './types';
+import {CodeBlock} from '../CodeBlock';
 
 function Question({question, answer}: QuestionProps) {
   const [expanded, setExpanded] = useState(false);

@@ -1,25 +1,13 @@
-import React, {useState} from 'react';
-import {
-  Box,
-  // useTheme
-} from '@mui/material';
+import React from 'react';
+import {Box} from '@mui/material';
 import Sidebar from './Sidebar';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
+import {LayoutProps} from './types';
 
 function Layout({children}: LayoutProps) {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  // const theme = useTheme();
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
   return (
     <Box sx={{display: 'flex'}}>
-      <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
+      <Sidebar />
       <Box
         component="main"
         sx={{
