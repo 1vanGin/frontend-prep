@@ -1,64 +1,61 @@
-import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
-import eslintPluginReact from "eslint-plugin-react";
-import eslintPluginReactHooks from "eslint-plugin-react-hooks";
-import eslintPluginJsxA11y from "eslint-plugin-jsx-a11y";
-import eslintConfigPrettier from "eslint-config-prettier";
+import js from '@eslint/js';
+import typescriptParser from '@typescript-eslint/parser';
+import typescriptPlugin from '@typescript-eslint/eslint-plugin';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
+import globals from 'globals';
 
 export default [
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
   {
-    files: ["**/*.{js,jsx,ts,tsx}"],
-    plugins: {
-      react: eslintPluginReact,
-      "react-hooks": eslintPluginReactHooks,
-      "jsx-a11y": eslintPluginJsxA11y,
-    },
+    ignores: ['dist/**', 'node_modules/**'],
+  },
+  js.configs.recommended,
+  {
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      ecmaVersion: 2025,
-      sourceType: "module",
-      jsx: true,
-      parser: tseslint.parser,
+      parser: typescriptParser,
       parserOptions: {
-        project: "./tsconfig.json",
+        project: './tsconfig.json',
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
       },
     },
-    settings: {
-      react: {
-        version: "detect",
-      },
+    plugins: {
+      '@typescript-eslint': typescriptPlugin,
     },
     rules: {
-      // Основные правила
-      "no-console": "warn",
-      "no-unused-vars": "error",
-      "prefer-const": "error",
-
-      // TypeScript
-      "@typescript-eslint/explicit-function-return-type": "warn",
-      "@typescript-eslint/no-explicit-any": "error",
-
-      // React
-      "react/prop-types": "off", // Используем TypeScript для проверки типов
-      "react/react-in-jsx-scope": "off", // Не нужно с React 17+
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-
-      // Доступность
-      "jsx-a11y/alt-text": "error",
-      "jsx-a11y/anchor-is-valid": "error",
-
-      // Производительность
-      "react/no-array-index-key": "warn",
-      "react/no-unused-prop-types": "error",
-
-      // Безопасность
-      "react/no-danger": "error",
-
-      // Новые возможности JavaScript (гипотетически)
-      // 'no-restricted-syntax': ['error', 'Decorator'], // Если декораторы станут проблемой
+      ...typescriptPlugin.configs.recommended.rules,
+      ...typescriptPlugin.configs['recommended-requiring-type-checking'].rules,
     },
   },
-  eslintConfigPrettier, // Отключаем правила ESLint, которые могут конфликтовать с Prettier
+  {
+    files: ['**/*.jsx', '**/*.tsx'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+      },
+    },
+    plugins: {
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
+    },
+    rules: {
+      ...reactPlugin.configs.recommended.rules,
+      ...reactHooksPlugin.configs.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
+    },
+  },
+  {
+    plugins: {
+      prettier: prettierPlugin,
+    },
+    rules: {
+      'prettier/prettier': ['error', prettierConfig],
+    },
+  },
 ];

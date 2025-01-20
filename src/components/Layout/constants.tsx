@@ -14,6 +14,10 @@ export const menuItems: MenuItem[] = [
   {text: 'JavaScript', icon: <JavaScriptIcon />, path: URL_PATH.JavaScript},
   {text: 'React', icon: <CodeIcon />, path: URL_PATH.React},
   {text: 'TypeScript', icon: <TypeScriptIcon />, path: URL_PATH.TypeScript},
-  {text: 'Interview Questions', icon: <InterviewIcon />, path: URL_PATH.Interview_Questions},
+  {
+    text: 'Interview Questions',
+    icon: <InterviewIcon />,
+    path: URL_PATH.Interview_Questions,
+  },
   {text: 'Coding Tasks', icon: <TaskIcon />, path: URL_PATH.Coding_Tasks},
 ];

@@ -16,7 +16,10 @@ const sections: Section[] = [
       {title: 'Closures', link: '/javascript#closures'},
       {title: 'Promises', link: '/javascript#promises'},
       {title: 'Event Loop', link: '/javascript#event-loop'},
-      {title: 'Prototypal Inheritance', link: '/javascript#prototypal-inheritance'},
+      {
+        title: 'Prototypal Inheritance',
+        link: '/javascript#prototypal-inheritance',
+      },
       {title: 'ES6+ Features', link: '/javascript#es6-features'},
     ],
     link: '/javascript',

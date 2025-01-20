@@ -7,7 +7,7 @@ import {CodeBlockProps} from './types';
 
 export const CodeBlock = ({code, language, title}: CodeBlockProps) => {
   return (
-    <Paper elevation={3} sx={{borderRadius: 2, overflow: 'hidden'}}>
+    <Paper elevation={3} sx={{overflow: 'hidden'}}>
       {title && (
         <Box sx={{backgroundColor: 'primary.main', padding: 1}}>
           <Typography variant="subtitle2" color="white">

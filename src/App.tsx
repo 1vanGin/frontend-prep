@@ -1,7 +1,8 @@
-import {lazy} from 'react';
+import {lazy, Suspense} from 'react';
 import {Routes, Route} from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
+import Loader from './components/Loader/Loader';
 import {URL_PATH} from './pages/enum';
 
 const HomeModule = lazy(() => import('./pages/Home'));
@@ -15,12 +16,54 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<HomeModule />} />
-        <Route path={URL_PATH.JavaScript} element={<JavaScriptModule />} />
-        <Route path={URL_PATH.React} element={<ReactModule />} />
-        <Route path={URL_PATH.TypeScript} element={<TypeScriptModule />} />
-        <Route path={URL_PATH.Interview_Questions} element={<InterviewQuestionsModule />} />
-        <Route path={URL_PATH.Coding_Tasks} element={<CodingTasksModule />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<Loader />}>
+              <HomeModule />
+            </Suspense>
+          }
+        />
+        <Route
+          path={URL_PATH.JavaScript}
+          element={
+            <Suspense fallback={<Loader />}>
+              <JavaScriptModule />
+            </Suspense>
+          }
+        />
+        <Route
+          path={URL_PATH.React}
+          element={
+            <Suspense fallback={<Loader />}>
+              <ReactModule />
+            </Suspense>
+          }
+        />
+        <Route
+          path={URL_PATH.TypeScript}
+          element={
+            <Suspense fallback={<Loader />}>
+              <TypeScriptModule />
+            </Suspense>
+          }
+        />
+        <Route
+          path={URL_PATH.Interview_Questions}
+          element={
+            <Suspense fallback={<Loader />}>
+              <InterviewQuestionsModule />
+            </Suspense>
+          }
+        />
+        <Route
+          path={URL_PATH.Coding_Tasks}
+          element={
+            <Suspense fallback={<Loader />}>
+              <CodingTasksModule />
+            </Suspense>
+          }
+        />
       </Routes>
     </Layout>
   );
