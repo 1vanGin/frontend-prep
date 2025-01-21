@@ -33,7 +33,6 @@ function Layout({children}: TLayoutProps) {
           sx={{
             maxWidth: '1200px',
             mx: 'auto',
-            overflow: 'hidden',
           }}
         >
           {children}
