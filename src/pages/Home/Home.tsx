@@ -1,6 +1,7 @@
 import React from 'react';
 import {Grid, Typography} from '@mui/material';
-import SectionCard from '../../components/SectionCard/SectionCard';
+import SectionCard from 'components/SectionCard/SectionCard';
+
 import {sections} from './sections';
 
 function Home() {

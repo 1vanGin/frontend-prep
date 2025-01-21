@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {Typography, Box} from '@mui/material';
-import Question from '../../components/Question/Question';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import {TQuestionItem} from '../../shared/types/common';
-import {javascriptQuestions} from '../../shared/questions/js_questions';
+
+import Question from 'components/Question';
+import SearchBar from 'components/SearchBar';
+import {TQuestionItem} from 'shared/types/common';
+import {javascriptQuestions} from 'shared/questions/js_questions';
 
 function JavaScriptPage() {
   const [filteredQuestions, setFilteredQuestions] = useState<TQuestionItem[]>(javascriptQuestions);

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Box} from '@mui/material';
 
-import {useTheme} from '../../theme/ThemeContext';
-import {colors} from '../../shared/colors';
+import {useTheme} from 'theme/ThemeContext';
+import {colors} from 'shared/colors';
+import Sidebar from 'components/Sidebar';
 
-import Sidebar from '../Sidebar';
 import {TLayoutProps} from './types';
 
 function Layout({children}: TLayoutProps) {

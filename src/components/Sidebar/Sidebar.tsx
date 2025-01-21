@@ -19,7 +19,6 @@ function Sidebar() {
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: 280,
-            // px: 2,
           },
         }}
       >
@@ -57,7 +56,7 @@ function Sidebar() {
             </IconButton>
           </Box>
           <Divider sx={{my: 1}} />
-          <List sx={{flex: 1}}>
+          <List sx={{flex: 1, overflow: 'hidden'}}>
             {menuItems.map(item => {
               const isActive = location.pathname === item.path;
               return (

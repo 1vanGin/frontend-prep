@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Assignment as TaskIcon,
   Code as CodeIcon,
@@ -7,7 +6,7 @@ import {
   QuestionAnswer as InterviewIcon,
 } from '@mui/icons-material';
 
-import {URL_PATH} from '../../pages/enum';
+import {URL_PATH} from 'pages/enum';
 import {TMenuItem} from './types';
 
 export const menuItems: TMenuItem[] = [

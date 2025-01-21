@@ -2,8 +2,8 @@ import {createContext, useContext, useState, useMemo} from 'react';
 import {ThemeProvider as MuiThemeProvider, createTheme} from '@mui/material/styles';
 import {PaletteMode} from '@mui/material';
 
+import {colors} from 'shared/colors';
 import {ThemeContextType, ThemeProviderProps} from './types';
-import {colors} from '../shared/colors';
 
 const ThemeContext = createContext<ThemeContextType>({
   mode: 'light',

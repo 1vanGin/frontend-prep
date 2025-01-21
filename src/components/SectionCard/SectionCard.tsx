@@ -1,8 +1,10 @@
 import React from 'react';
 import {Link as RouterLink} from 'react-router-dom';
 import {Button, Card, CardActions, CardContent, List, ListItem, ListItemText, Typography} from '@mui/material';
-import {useTheme} from '../../theme/ThemeContext';
-import {colors} from '../../shared/colors';
+
+import {useTheme} from 'theme/ThemeContext';
+import {colors} from 'shared/colors';
+
 import {TSectionCardProps} from './types';
 
 function SectionCard({title, topics, link, description}: TSectionCardProps) {

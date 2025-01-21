@@ -1,9 +1,9 @@
 import {lazy, Suspense} from 'react';
 import {Routes, Route} from 'react-router-dom';
 
-import Layout from './components/Layout/Layout';
-import Loader from './components/Loader/Loader';
-import {URL_PATH} from './pages/enum';
+import Layout from 'components/Layout/Layout';
+import Loader from 'components/Loader/Loader';
+import {URL_PATH} from 'pages/enum';
 
 const HomeModule = lazy(() => import('./pages/Home'));
 const JavaScriptModule = lazy(() => import('./pages/JavaScriptPage'));

@@ -1,6 +1,7 @@
 import {CircularProgress, Box} from '@mui/material';
-import {useTheme} from '../../theme/ThemeContext';
-import {colors} from '../../shared/colors';
+
+import {useTheme} from 'theme/ThemeContext';
+import {colors} from 'shared/colors';
 
 const Loader = () => {
   const {mode} = useTheme();
