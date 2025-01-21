@@ -1,4 +1,4 @@
-export type QuestionProps = {
+export type TQuestionProps = {
   question: string;
   answer: string;
 };

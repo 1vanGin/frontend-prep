@@ -1,11 +1,11 @@
-export type TopicLink = {
+export type TTopicLink = {
   title: string;
   link: string;
 };
 
-export type SectionCardProps = {
+export type TSectionCardProps = {
   title: string;
-  topics?: TopicLink[];
+  topics?: TTopicLink[];
   link: string;
   description?: string;
 };

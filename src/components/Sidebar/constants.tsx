@@ -8,9 +8,9 @@ import {
 } from '@mui/icons-material';
 
 import {URL_PATH} from '../../pages/enum';
-import {MenuItem} from './types';
+import {TMenuItem} from './types';
 
-export const menuItems: MenuItem[] = [
+export const menuItems: TMenuItem[] = [
   {text: 'JavaScript', icon: <JavaScriptIcon />, path: URL_PATH.JavaScript},
   {text: 'React', icon: <CodeIcon />, path: URL_PATH.React},
   {text: 'TypeScript', icon: <TypeScriptIcon />, path: URL_PATH.TypeScript},

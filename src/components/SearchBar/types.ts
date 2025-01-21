@@ -1,3 +1,3 @@
-export type SearchBarProps = {
+export type TSearchBarProps = {
   onSearch: (searchTerm: string) => void;
 };

@@ -19,14 +19,14 @@ function Sidebar() {
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: 280,
-            px: 2,
+            // px: 2,
           },
         }}
       >
         <Box sx={{height: '100%', display: 'flex', flexDirection: 'column'}}>
           <Box
             sx={{
-              py: 3,
+              p: 2,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -40,7 +40,6 @@ function Sidebar() {
                 textDecoration: 'none',
                 color: 'primary.main',
                 fontWeight: 700,
-                letterSpacing: '-0.5px',
               }}
             >
               Interview Prep
@@ -57,7 +56,7 @@ function Sidebar() {
               {mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
           </Box>
-          <Divider sx={{my: 2}} />
+          <Divider sx={{my: 1}} />
           <List sx={{flex: 1}}>
             {menuItems.map(item => {
               const isActive = location.pathname === item.path;
@@ -95,7 +94,6 @@ function Sidebar() {
                   <ListItemText
                     primary={item.text}
                     primaryTypographyProps={{
-                      fontSize: '0.9375rem',
                       fontWeight: isActive ? 600 : 500,
                     }}
                   />

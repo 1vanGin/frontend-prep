@@ -1,11 +1,5 @@
 import React from 'react';
 
-export type LayoutProps = {
+export type TLayoutProps = {
   children: React.ReactNode;
-};
-
-export type MenuItem = {
-  text: string;
-  icon: React.ReactElement;
-  path: string;
 };

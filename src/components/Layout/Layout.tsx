@@ -1,11 +1,13 @@
 import React from 'react';
 import {Box} from '@mui/material';
-import Sidebar from './Sidebar';
-import {LayoutProps} from './types';
+
 import {useTheme} from '../../theme/ThemeContext';
 import {colors} from '../../shared/colors';
 
-function Layout({children}: LayoutProps) {
+import Sidebar from '../Sidebar';
+import {TLayoutProps} from './types';
+
+function Layout({children}: TLayoutProps) {
   const {mode} = useTheme();
 
   return (
