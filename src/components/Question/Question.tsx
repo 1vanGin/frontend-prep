@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {Accordion, AccordionSummary, AccordionDetails, Typography} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import {QuestionProps} from './types';
-import {CodeBlock} from '../CodeBlock';
+import {CodeBlock} from 'components/CodeBlock';
+import {TQuestionProps} from './types';
 
-function Question({question, answer}: QuestionProps) {
+function Question({question, answer}: TQuestionProps) {
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (event: React.SyntheticEvent, isExpanded: boolean) => {

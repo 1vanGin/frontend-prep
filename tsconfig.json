@@ -20,6 +20,6 @@
     "typeRoots": ["./src/shared/types", "./node_modules/@types"],
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["./src/**/*", "vite.config.ts", "dev", "vite-env.d.ts", "jest.config.ts"],
+  "include": ["./src/**/*", "vite.config.ts", "dev", "vite-env.d.ts"],
   "exclude": ["node_modules"]
 }

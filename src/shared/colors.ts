@@ -49,6 +49,18 @@ export const colors = {
     light: 'rgba(30, 41, 59, 0.1)',
     dark: 'rgba(241, 245, 249, 0.1)',
   },
+  button: {
+    light: {
+      primary: '#6366F1',
+      hover: '#4F46E5',
+      text: '#FFFFFF',
+    },
+    dark: {
+      primary: '#818CF8',
+      hover: '#6366F1',
+      text: '#FFFFFF',
+    },
+  },
   gradients: {
     light: 'radial-gradient(at 50% 0%, rgba(99, 102, 241, 0.1) 0%, rgba(248, 250, 252, 0) 75%)',
     dark: 'radial-gradient(at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0) 75%)',

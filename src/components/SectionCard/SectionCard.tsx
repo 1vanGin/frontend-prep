@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link as RouterLink} from 'react-router-dom';
 import {Button, Card, CardActions, CardContent, List, ListItem, ListItemText, Typography} from '@mui/material';
-import {useTheme} from '../../theme/ThemeContext';
-import {colors} from '../../shared/colors';
-import {SectionCardProps} from './types';
 
-function SectionCard({title, topics, link, description}: SectionCardProps) {
+import {useTheme} from 'theme/ThemeContext';
+import {colors} from 'shared/colors';
+
+import {TSectionCardProps} from './types';
+
+function SectionCard({title, topics, link, description}: TSectionCardProps) {
   const {mode} = useTheme();
 
   return (
@@ -24,9 +26,9 @@ function SectionCard({title, topics, link, description}: SectionCardProps) {
         </Typography>
         {topics ? (
           <List>
-            {topics.slice(0, 5).map((topic, index) => (
+            {topics.slice(0, 5).map(topic => (
               <ListItem
-                key={index}
+                key={topic.title}
                 component={RouterLink}
                 to={topic.link}
                 sx={{
@@ -74,7 +76,7 @@ function SectionCard({title, topics, link, description}: SectionCardProps) {
             },
           }}
         >
-          View All
+          Перейти
         </Button>
       </CardActions>
     </Card>

@@ -1,11 +1,13 @@
 import React from 'react';
 import {Box} from '@mui/material';
-import Sidebar from './Sidebar';
-import {LayoutProps} from './types';
-import {useTheme} from '../../theme/ThemeContext';
-import {colors} from '../../shared/colors';
 
-function Layout({children}: LayoutProps) {
+import {useTheme} from 'theme/ThemeContext';
+import {colors} from 'shared/colors';
+import Sidebar from 'components/Sidebar';
+
+import {TLayoutProps} from './types';
+
+function Layout({children}: TLayoutProps) {
   const {mode} = useTheme();
 
   return (
@@ -31,7 +33,6 @@ function Layout({children}: LayoutProps) {
           sx={{
             maxWidth: '1200px',
             mx: 'auto',
-            overflow: 'hidden',
           }}
         >
           {children}

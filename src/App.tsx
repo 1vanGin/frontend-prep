@@ -1,9 +1,9 @@
 import {lazy, Suspense} from 'react';
 import {Routes, Route} from 'react-router-dom';
 
-import Layout from './components/Layout/Layout';
-import Loader from './components/Loader/Loader';
-import {URL_PATH} from './pages/enum';
+import Layout from 'components/Layout/Layout';
+import Loader from 'components/Loader/Loader';
+import {URL_PATH} from 'pages/enum';
 
 const HomeModule = lazy(() => import('./pages/Home'));
 const JavaScriptModule = lazy(() => import('./pages/JavaScriptPage'));
@@ -11,6 +11,7 @@ const ReactModule = lazy(() => import('./pages/ReactPage'));
 const TypeScriptModule = lazy(() => import('./pages/TypeScriptPage'));
 const InterviewQuestionsModule = lazy(() => import('./pages/InterviewQuestions'));
 const CodingTasksModule = lazy(() => import('./pages/CodingTasks'));
+const NotFoundModule = lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
             </Suspense>
           }
         />
+        <Route path="*" element={<NotFoundModule />} />
       </Routes>
     </Layout>
   );
