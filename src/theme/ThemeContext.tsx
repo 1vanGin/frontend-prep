@@ -1,23 +1,29 @@
-import {createContext, useContext, useState, useMemo} from 'react';
+import {createContext, useContext, useState, useMemo, useCallback} from 'react';
 import {ThemeProvider as MuiThemeProvider, createTheme} from '@mui/material/styles';
 import {PaletteMode} from '@mui/material';
 
 import {colors} from 'shared/colors';
 import {ThemeContextType, ThemeProviderProps} from './types';
+import {DEFAULT_THEME} from './constants';
+import {getStoredTheme, setStoredTheme} from './utils';
 
 const ThemeContext = createContext<ThemeContextType>({
-  mode: 'light',
+  mode: DEFAULT_THEME,
   toggleTheme: () => {},
 });
 
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({children}: ThemeProviderProps) => {
-  const [mode, setMode] = useState<PaletteMode>('dark');
+  const [mode, setMode] = useState<PaletteMode>(getStoredTheme);
 
-  const toggleTheme = () => {
-    setMode((prevMode: PaletteMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  };
+  const toggleTheme = useCallback(() => {
+    setMode(prevMode => {
+      const newMode = prevMode === 'light' ? 'dark' : 'light';
+      setStoredTheme(newMode);
+      return newMode;
+    });
+  }, []);
 
   const theme = useMemo(
     () =>
@@ -101,8 +107,16 @@ export const ThemeProvider = ({children}: ThemeProviderProps) => {
     [mode]
   );
 
+  const contextValue = useMemo(
+    () => ({
+      mode,
+      toggleTheme,
+    }),
+    [mode, toggleTheme]
+  );
+
   return (
-    <ThemeContext.Provider value={{mode, toggleTheme}}>
+    <ThemeContext.Provider value={contextValue}>
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );

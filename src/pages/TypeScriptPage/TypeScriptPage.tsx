@@ -3,6 +3,7 @@ import {Typography, Box} from '@mui/material';
 
 import Question from 'components/Question';
 import SearchBar from 'components/SearchBar';
+import PageHeader from 'components/PageHeader';
 import {typescriptQuestions} from 'shared/questions/ts_questions';
 import {TQuestionItem} from 'shared/types/common';
 
@@ -26,9 +27,7 @@ function TypeScriptPage() {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
-        TypeScript Interview Questions
-      </Typography>
+      <PageHeader title="TypeScript Interview Questions" />
       <SearchBar onSearch={handleSearch} />
       {filteredQuestions.map(q => (
         <Box key={q.id} id={q.id} mb={2}>

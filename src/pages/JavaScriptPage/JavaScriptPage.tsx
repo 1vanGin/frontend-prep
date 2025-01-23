@@ -3,6 +3,7 @@ import {Typography, Box} from '@mui/material';
 
 import Question from 'components/Question';
 import SearchBar from 'components/SearchBar';
+import PageHeader from 'components/PageHeader';
 import {TQuestionItem} from 'shared/types/common';
 import {javascriptQuestions} from 'shared/questions/js_questions';
 
@@ -26,9 +27,7 @@ function JavaScriptPage() {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
-        JavaScript Interview Questions
-      </Typography>
+      <PageHeader title="JavaScript Interview Questions" />
       <SearchBar onSearch={handleSearch} />
       {filteredQuestions.map(q => (
         <Box key={q.id} id={q.id} mb={2}>

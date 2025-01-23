@@ -38,13 +38,13 @@ export const sections: TSection[] = [
     link: '/typescript',
   },
   {
-    title: 'Interview Questions',
+    title: 'Вопросы с собеседований',
     description: 'Explore a comprehensive list of common interview questions for React developers.',
-    link: '/interview-questions',
+    link: '/interview_questions',
   },
   {
-    title: 'Coding Tasks',
+    title: 'Задачи с собеседований',
     description: 'Practice with real-world coding tasks often given during React developer interviews.',
-    link: '/coding-tasks',
+    link: '/coding_tasks',
   },
 ];

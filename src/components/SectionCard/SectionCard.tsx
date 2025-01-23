@@ -76,7 +76,7 @@ function SectionCard({title, topics, link, description}: TSectionCardProps) {
             },
           }}
         >
-          View All
+          Перейти
         </Button>
       </CardActions>
     </Card>
