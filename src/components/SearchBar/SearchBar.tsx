@@ -8,9 +8,7 @@ function SearchBar({onSearch}: TSearchBarProps) {
     onSearch(event.target.value);
   };
 
-  return (
-    <TextField fullWidth variant="outlined" placeholder="Search questions..." onChange={handleChange} sx={{mb: 2}} />
-  );
+  return <TextField fullWidth variant="outlined" placeholder="Поиск" onChange={handleChange} sx={{mb: 2}} />;
 }
 
 export default SearchBar;

@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {Typography, Box} from '@mui/material';
+import React, {useEffect, useState} from 'react';
+import {Box} from '@mui/material';
 
 import Question from 'components/Question';
 import SearchBar from 'components/SearchBar';
 import PageHeader from 'components/PageHeader';
+import {NothingFound} from 'components/NothingFound';
 import {TQuestionItem} from 'shared/types/common';
 import {javascriptQuestions} from 'shared/questions/js_questions';
 
@@ -27,16 +28,14 @@ function JavaScriptPage() {
 
   return (
     <Box>
-      <PageHeader title="JavaScript Interview Questions" />
+      <PageHeader title="Вопросы по JavaScript" />
       <SearchBar onSearch={handleSearch} />
       {filteredQuestions.map(q => (
         <Box key={q.id} id={q.id} mb={2}>
           <Question question={q.question} answer={q.answer} />
         </Box>
       ))}
-      {filteredQuestions.length === 0 && (
-        <Typography color="text.secondary">No questions found matching your search.</Typography>
-      )}
+      {filteredQuestions.length === 0 && <NothingFound />}
     </Box>
   );
 }
