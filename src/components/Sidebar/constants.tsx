@@ -14,9 +14,9 @@ export const menuItems: TMenuItem[] = [
   {text: 'React', icon: <CodeIcon />, path: URL_PATH.React},
   {text: 'TypeScript', icon: <TypeScriptIcon />, path: URL_PATH.TypeScript},
   {
-    text: 'Interview Questions',
+    text: 'Общие вопросы',
     icon: <InterviewIcon />,
     path: URL_PATH.Interview_Questions,
   },
-  {text: 'Coding Tasks', icon: <TaskIcon />, path: URL_PATH.Coding_Tasks},
+  {text: 'Задачи с собседований', icon: <TaskIcon />, path: URL_PATH.Coding_Tasks},
 ];
